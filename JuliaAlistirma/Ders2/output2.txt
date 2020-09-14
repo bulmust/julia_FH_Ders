@@ -1,0 +1,9 @@
+Difernasiyel Denklem Cozum Modulunun Yuklenmesi:
+ 40.901462 seconds (60.47 M allocations: 3.349 GiB, 3.48% gc time)
+===========
+Difernasiyel Denklem Cozum Suresi:
+  2.627584 seconds (4.37 M allocations: 227.498 MiB, 3.53% gc time)
+===========
+Plots Modulunun Yuklenmesi:
+ 17.999166 seconds (12.05 M allocations: 719.005 MiB, 1.52% gc time)
+===========
