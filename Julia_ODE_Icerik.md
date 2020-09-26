@@ -2,16 +2,16 @@
 <!-- TOC -->
 
 - [Julia Programla Dili İle ODE Çözümü](#julia-programla-dili-i̇le-ode-çözümü)
-    - [Julia'yı Yükleme](#juliayı-yükleme)
-    - [Yüklemek İçin İndirilmesi Gereken Dosya](#yüklemek-i̇çin-i̇ndirilmesi-gereken-dosya)
-    - [Alıştırmalar](#alıştırmalar)
-        - [Hello World](#hello-world)
-        - [Ekrana Tek Sayıları Yazdırma](#ekrana-tek-sayıları-yazdırma)
-        - [Kullanıcının Verdiği Yarıçap İle Kürenin Hacmini Hesaplayan Fonksiyon Yazma](#kullanıcının-verdiği-yarıçap-i̇le-kürenin-hacmini-hesaplayan-fonksiyon-yazma)
-        - [Julia'da Class Yazma](#juliada-class-yazma)
-    - [Julia ile Diferansiyel Denklem Çözmek](#julia-ile-diferansiyel-denklem-çözmek)
-        - [Julia Diferansiyel Denklemler Çözme Paketinin Yüklenmesi](#julia-diferansiyel-denklemler-çözme-paketinin-yüklenmesi)
-        - [Basit Bir Diferansiyel Denklem Çözme](#basit-bir-diferansiyel-denklem-çözme)
+	- [Julia'yı Yükleme](#juliayı-yükleme)
+	- [Yüklemek İçin İndirilmesi Gereken Dosya](#yüklemek-i̇çin-i̇ndirilmesi-gereken-dosya)
+	- [Alıştırmalar](#alıştırmalar)
+		- [Hello World](#hello-world)
+		- [Ekrana Tek Sayıları Yazdırma](#ekrana-tek-sayıları-yazdırma)
+		- [Kullanıcının Verdiği Yarıçap İle Kürenin Hacmini Hesaplayan Fonksiyon Yazma](#kullanıcının-verdiği-yarıçap-i̇le-kürenin-hacmini-hesaplayan-fonksiyon-yazma)
+		- [Julia'da Class Yazma](#juliada-class-yazma)
+	- [Julia ile Diferansiyel Denklem Çözmek](#julia-ile-diferansiyel-denklem-çözmek)
+		- [Julia Diferansiyel Denklemler Çözme Paketinin Yüklenmesi](#julia-diferansiyel-denklemler-çözme-paketinin-yüklenmesi)
+		- [Basit Bir Diferansiyel Denklem Çözme](#basit-bir-diferansiyel-denklem-çözme)
 
 <!-- /TOC -->
 
@@ -35,8 +35,8 @@ Linux:
 ```bash
  wget https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.1-linux-x86_64.tar.gz
  tar -xvf julia-1.5.1-linux-x86_64.tar.gz
- sudo mv -r julia-1.5.1/ /opt/
- ln -s /opt/julia-1.5.1/bin/julia/ /usr/local/bin/
+ sudo mv julia-1.5.1/ /opt/
+ sudo ln -s /opt/julia-1.5.1/bin/julia/ /usr/local/bin/
 ```
 
 - Arch Linux:
