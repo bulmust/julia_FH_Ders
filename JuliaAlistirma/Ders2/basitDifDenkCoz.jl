@@ -7,11 +7,10 @@ println("Plots Modulunun Yuklenmesi:")
 @time using Plots
 println("===========")
 
-
 function difdenkcoz()
 
 	# Denklemin sag tarafini belirle
-	f(u,p,t) = u;
+	f2(u,p,t) = u;
 
 	# U'nun baslangic degerini belirleyin. (Baslangic Deger Problemi)
 	u0 = 1/2;
@@ -20,11 +19,11 @@ function difdenkcoz()
 	tspan = (0.0, 1.0);
 
 	# Problemi olusturun.
-	prob = ODEProblem(f, u0, tspan);
+	prob2 = ODEProblem(f2, u0, tspan);
 
 	# Problemi Cozun
 	println("Difernasiyel Denklem Cozum Suresi:")
-	@time sol = solve(prob, Tsit5(), reltol=1e-8, abstol=1e-8);
+	@time sol = solve(prob2, Tsit5(), reltol=1e-8, abstol=1e-8);
 	println("===========")
 
 	# --------------------------
