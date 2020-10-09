@@ -5,15 +5,15 @@
 - [Julia'yı Yükleme](#juliayı-yükleme)
 - [Bazı Faydalı Kaynaklar](#bazı-faydalı-kaynaklar)
 - [Alıştırmalar](#alıştırmalar)
-  - [Hello World](#hello-world)
-  - [Ekrana Tek Sayıları Yazdırma](#ekrana-tek-sayıları-yazdırma)
-  - [Kullanıcının Verdiği Yarıçap İle Kürenin Hacmini Hesaplayan Fonksiyon Yazma](#kullanıcının-verdiği-yarıçap-i̇le-kürenin-hacmini-hesaplayan-fonksiyon-yazma)
-  - [Julia'da Modül Yazma](#juliada-modül-yazma)
+    - [Hello World](#hello-world)
+    - [Ekrana Tek Sayıları Yazdırma](#ekrana-tek-sayıları-yazdırma)
+    - [Kullanıcının Verdiği Yarıçap İle Kürenin Hacmini Hesaplayan Fonksiyon Yazma](#kullanıcının-verdiği-yarıçap-i̇le-kürenin-hacmini-hesaplayan-fonksiyon-yazma)
+    - [Julia'da Modül Yazma](#juliada-modül-yazma)
 
 <!-- /TOC -->
 
 # Giriş
-* Tüm materyal bir süre boyunca aşağıdaki linktedir. 
+* Tüm materyal bir süre boyunca aşağıdaki linktedir
 
 `https://github.com/bulmust/julia_FH_Ders`
 
