@@ -15,7 +15,7 @@
 # Giriş
 * Tüm materyal bir süre boyunca aşağıdaki linktedir
 
-`https://github.com/bulmust/julia_FH_Ders`
+[https://github.com/bulmust/julia_FH_Ders](https://github.com/bulmust/julia_FH_Ders)
 
 * Bu derste, Julia dilinin yanında Linux komutları kullanılacaktır. (Mac için de uygun olabilir). Linux komutları daha çok dosya oluşturma vs. gibi komutlar olacağı için Windows kullanıcıları da kolaylıkla dersi takip edebilir.
 
@@ -32,7 +32,15 @@ Bu ders sırasında yapılacakları aşağıdaki gibi özetleyebiliriz.
 
 ---------------
 # Neden Julia?
-- Çeşitli programlama dillerinin arasındaki hızların karşılaştırılmıştır (2019). Daha ayrıntılı ve yorumlu karşılaştırma için [tıklayınız](https://modelingguru.nasa.gov/docs/DOC-2783)
+- "Julia is a high-level, high-performance, dynamic programming language. While it is a general purpose language and can be used to write any application, many of its features are well-suited for numerical analysis and computational science." [Wiki](https://en.wikipedia.org/wiki/Julia_(programming_language))
+
+  - Implementation language	Julia, C, C++, Scheme, LLVM
+
+  - First appeared	2012
+
+- Çeşitli program dillerinin karşılaştırılması hakkında güzel bir yorumu [şu linkte](https://www.stochasticlifestyle.com/comparison-differential-equation-solver-suites-matlab-r-julia-python-c-fortran/) bulabilirsiniz.
+
+- Çeşitli programlama dillerinin arasındaki hızların karşılaştırılmıştır (2019). Daha ayrıntılı ve yorumlu karşılaştırma için [tıklayınız.](https://modelingguru.nasa.gov/docs/DOC-2783)
 
 Python, Julia, Java, Scala, IDL, Matlab, R, C, Fortran
 
@@ -70,10 +78,15 @@ Not: Iphone diferansiyel denklem çözücü. [Fluxura](https://apps.apple.com/in
 - Ubuntu (En Yeni Sürüm, 1.5.1, 10.09.2020)
 
 ```bash
- wget https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.1-linux-x86_64.tar.gz
- tar -xvf julia-1.5.1-linux-x86_64.tar.gz
- sudo mv julia-1.5.1/ /opt/
- sudo ln -s /opt/julia-1.5.1/bin/julia/ /usr/local/bin/
+ #wget https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.1-linux-x86_64.tar.gz
+ #tar -xvf julia-1.5.1-linux-x86_64.tar.gz
+ #sudo mv julia-1.5.1/ /opt/
+ #sudo ln -s /opt/julia-1.5.1/bin/julia/ /usr/local/bin/
+ 
+ wget https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.2-linux-x86_64.tar.gz
+ tar -xvf julia-1.5.2-linux-x86_64.tar.gz
+ sudo mv julia-1.5.2/ /opt/
+ sudo ln -s /opt/julia-1.5.2/bin/julia/ /usr/local/bin/
 ```
 
 - Arch Linux:
@@ -105,19 +118,85 @@ makepkg -si
 
 # Alıştırmalar
 
-- Yeni bir klasör oluşturun. `cd; mkdir JuliaAlistirma; cd JuliaAlistirma`
+- Yeni bir klasör oluşturun. 
+
+```bash
+cd; mkdir JuliaAlistirma; cd JuliaAlistirma
+```
 
 ## Hello World
 
-- "helloWorld.jl" adlı bir dosya oluşturun ve içerisine `println("Hello World")` yazın. Kaydet ve çıkın.
-- Terminale `julia helloWorld.jl` yazıp çalıştırın.
+- "helloWorld.jl" adlı bir dosya oluşturun ve içerisine `println("Hello World")` yazın. 
+
+```bash
+touch helloWorld.jl
+echo 'println("Hello World")' >> helloWorld.jl
+nano helloWorld.jl
+```
+
+Kaydet ve çıkın. (Nano programından çıkmak için ctrl+x'e basın.)
+- Terminale `julia` yazın.
+
+```bash
+
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.5.2 (2020-09-23)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia>
+```
+
+- Derlenmiş Julia programına giriş yaptınız. Bu arayüzde programınızı çalıştırabilirsiniz. Önce hangi klasörün içinde olduğumuza bakalım.
+
+```julia
+julia> pwd()
+"/home/taygun/JuliaAlistirma"
+```
+
+- Klasörün içerisinde hangi dosyalar var ona bakalım. Ayrintili bilgi için [şu bağlantıya](https://docs.julialang.org/en/v1/base/file/) tıklayınız.
+
+```julia
+julia> klasorIci = readdir()
+1-element Array{String,1}:
+ "helloWorld.jl"
+
+julia> klasorIci[1]
+"helloWorld.jl"
+```
+
+- Oluşturduğmuz dosyayı iki şekilde çalıştırabiliriz. Birincisi, julia arayüzünün içinde oluşturduğumuz dosyayı çağıralım.
+
+```julia
+julia> include("helloWorld.jl")
+Hello World
+```
+
+- Terminalden program çalıştırmak için aşağıdaki komutu çalıştırın. Bunun için julia arayüzünden çıkmak gerekmektedir.
+
+```julia
+julia> exit()
+```
+
+- Terminale aşağıdaki komutu yazın ve çalıştırın.
+
+```bash
+julia helloWorld.jl
+```
 
 ## Ekrana Tek Sayıları Yazdırma
 
 - tekSayiYazdir.jl dosyasını oluşturun.
-`touch tekSayiYazdir.jl`
 
-- Aşağıdaki kodu tekSayiYazdir.jl dosyasının içine yazın.
+```bash
+touch tekSayiYazdir.jl
+```
+
+- Aşağıdaki kodu "tekSayiYazdir.jl" dosyasının içine yazın.
 
 ```julia
 for i = 1:10
@@ -132,9 +211,12 @@ end
 ## Kullanıcının Verdiği Yarıçap İle Kürenin Hacmini Hesaplayan Fonksiyon Yazma
 
 - kureHacmiBul.jl dosyasını oluşturun.
-`touch kureHacmiBul.jl`
 
-- Aşağıdaki kodu kureHacmiBul.jl dosyasının içine yazın.
+```bash
+touch kureHacmiBul.jl
+```
+
+- Aşağıdaki kodu "kureHacmiBul.jl" dosyasının içine yazın.
 
 ```julia
 function kure_hacmi_hesapla(r)
@@ -143,7 +225,7 @@ function kure_hacmi_hesapla(r)
 end
 
 # Kullanicidan Sayi Isteme Notunu Yazdirin
-println("Lutfen Kurenin Yaricapini Girip Entera Basiniz")
+println("Lutfen Kurenin Yaricapini [cm] Girip Entera Basiniz")
 
 # Kullanicin yazdigini okutun
 r = readline()
@@ -151,17 +233,26 @@ r = readline()
 # Kullanicinin Yazdigini integer (tam sayiya) cevirin
 r = parse(Int64, r)
 
-println("Kurenin Hacmi: ", kure_hacmi_hesapla(r))
+println("Kurenin Hacmi: ", kure_hacmi_hesapla(r), " cm^3")
 ```
 
-- Terminalde `julia kureHacmiBul.jl` kodunu çalıştırın.
+- Terminale aşağıdaki komutu yazın ve çalıştırın.
+
+```bash
+julia kureHacmiBul.jl
+```
 
 ## Julia'da Modül Yazma
 
-- denemeModul.jl dosyasını oluşturun.
-`touch denemeModul.jl`
+- Modül dökümantasyonu [şu linktedir.](https://docs.julialang.org/en/v1/manual/modules/)
 
-- denemeModul.jl dosyasına aşağıdaki kodu yazın.
+- "denemeModul.jl" dosyasını oluşturun.
+
+```bash
+touch denemeModul.jl
+```
+
+- "denemeModul.jl" dosyasına aşağıdaki kodu yazın.
 
 ```julia
 module denemeModul
@@ -173,10 +264,13 @@ end
 end
 ```
 
-- Deneme modülünü çalıştıracak `denemeModulCalistir.jl` dosyasını oluşturun.
-`touch denemeModulCalistir.jl`
+- Deneme modülünü çalıştıracak "denemeModulCalistir.jl" dosyasını oluşturun.
 
-- denemeModulCalistir.jl dosyasına aşağıdaki kodu yazın.
+```bash
+touch denemeModulCalistir.jl
+```
+
+- "denemeModulCalistir.jl" dosyasına aşağıdaki kodu yazın.
 
 ```julia
 # Hamiltonyenler modulunu cagir.
@@ -185,8 +279,42 @@ include("./denemeModul.jl")
 denemeModul.deneme_modulu(1)
 ```
 
-- Terminalde `julia denemeModulCalistir.jl` kodunu çalıştırın.
+- Terminalde "denemeModulCalistir.jl" dosyasını çalıştırın.
 
+```bash
+julia denemeModulCalistir.jl
+```
+
+- "denemeModul.jl" içerisindeki fonksiyonu julia arayüzünde çağıralım. Bunun için julia arayüzünü terminalde açın.
+
+- Klasörün içinde hangi dosyalar olduğuna bakın.
+
+```julia
+klasorIci=readdir()
+4-element Array{String,1}:
+ "denemeModul.jl"
+ "denemeModulCalistir.jl"
+ "helloWorld.jl"
+ "kureHacmiBul.jl
+```
+
+- Deneme modülü "denemeModulCalistir.jl" dosyasını arayüze çağırın.
+
+```julia
+julia> include(klasorIci[1])
+Main.denemeModul
+
+julia> denemeModul.deneme_modulu(1)
+Bu deneme moduludur.
+1
+
+julia> sonuc = denemeModul.deneme_modulu(1)
+Bu deneme moduludur.
+1
+
+julia> sonuc
+1
+```
 -----------------
 
 
